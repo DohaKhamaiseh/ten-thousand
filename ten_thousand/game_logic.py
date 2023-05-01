@@ -123,3 +123,22 @@ class GameLogic :
          random_numbers.append(num)
        tuple1=tuple(random_numbers)
        return tuple1
+  
+  @staticmethod
+  def validate_keepers(roll,keeper):
+    roll_counter = Counter(roll)
+    keeper_counter = Counter(keeper)
+    same = keeper_counter - roll_counter
+    if (len(same)==0):
+      return True
+    else:
+      return False
+
+  @staticmethod
+  def get_scorers(t):
+      listt =[]
+      for  i in t:
+        if(GameLogic.calculate_score((i,))!=0):
+          listt.append(i)
+      tt = tuple(listt)
+      return tt
