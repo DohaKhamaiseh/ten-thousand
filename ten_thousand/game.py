@@ -2,13 +2,25 @@ from ten_thousand.game_logic import GameLogic
 # ten_thousand.
 
 def play(roller=GameLogic.roll_dice, num_round=15):
+    '''
+    Play is a Method responsible for Running the game 
+    This method receives two parameters :
+     roller param: to generate random numbers for dices
+     num_round param: number rounds to roll the dice and the max allowed to user is 15 round
+     returns: Game version2 as its required.
 
+    '''
+  
     score = 0
     global dice_roller
     dice_roller = roller
     total =0
 
     def start_game(num_round):
+        '''
+       start_game is a Method responsible for starting the game ,exactly the first round and to represnt as sim file.
+       receives num_round param: to initiate the game round by round
+        '''
         nonlocal score
         dec_round = 0
         nonlocal total
@@ -27,6 +39,10 @@ def play(roller=GameLogic.roll_dice, num_round=15):
            
 
         def quit():
+            '''
+             quit is a Method responsible for quitting the game ,when the user inser "q"
+       
+            '''
             print("Thanks for playing. You earned " + str(total) + " points")
 
         while num_round > 0:
@@ -78,6 +94,9 @@ def play(roller=GameLogic.roll_dice, num_round=15):
            
 
     def user_input():
+        '''
+         user_input is a Method responsible for acquiring inputs from user about what to bank and how many times to roll dices.
+        '''
         print("Welcome to Ten Thousand")
         print("(y)es to play or (n)o to decline")
         input1 = input("> ")
