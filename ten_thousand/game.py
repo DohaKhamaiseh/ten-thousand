@@ -6,9 +6,9 @@ total = 0
 
 
 
-rounds=15
 
-def play(roller=GameLogic.roll_dice):
+
+def play(roller=GameLogic.roll_dice,num_rounds=20):
     global total
     total = 0
     print("Welcome to Ten Thousand")
@@ -18,7 +18,7 @@ def play(roller=GameLogic.roll_dice):
         print("OK. Maybe another time")
         return
     
-    for num_round in range(1, 4):
+    for num_round in range(1, num_rounds+1):
         print(f"Starting round {num_round}")
         num_dice = 6
         round_score = 0
@@ -41,7 +41,8 @@ def play(roller=GameLogic.roll_dice):
              num_dice = 6
              continue
             
-            input_str = input("Enter dice to keep, or (q)uit:\n> ")
+            print("Enter dice to keep, or (q)uit:")
+            input_str =  input("> ")
             if input_str == "q":
                 print(f"Thanks for playing. You earned {total} points")
                 return
@@ -51,7 +52,8 @@ def play(roller=GameLogic.roll_dice):
             while (val==False):
                 print("Cheater!!! Or possibly made a typo...")
                 print("*** ", " ".join(str(d) for d in dice), " ***")
-                input_str = input("Enter dice to keep, or (q)uit:\n> ")
+                print("Enter dice to keep, or (q)uit:")
+                input_str =  input("> ")
                 if input_str == "q":
                  print(f"Thanks for playing. You earned {total} points")
                  return
@@ -79,7 +81,8 @@ def play(roller=GameLogic.roll_dice):
                      
 
             print(f"You have {round_score} unbanked points and {num_dice} dice remaining")
-            input_str = input("(r)oll again, (b)ank your points or (q)uit:\n> ")
+            print("(r)oll again, (b)ank your points or (q)uit:")
+            input_str =  input("> ")
             if input_str == "b":
                 total += round_score
                 print(f"You banked {round_score} points in round {num_round}")
