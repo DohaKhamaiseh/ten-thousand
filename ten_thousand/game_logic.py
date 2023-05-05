@@ -114,3 +114,37 @@ class GameLogic :
          random_numbers.append(num)
        tuple1=tuple(random_numbers)
        return tuple1
+  
+  @staticmethod
+  def validate_keepers(roll,keeper):
+    roll_counter = Counter(roll)
+    keeper_counter = Counter(keeper)
+    same = keeper_counter - roll_counter
+    if (len(same)==0):
+      return True
+    else:
+      return False
+
+  @staticmethod
+  def get_scorers(t):
+      '''
+      a static method finds the numbers that return values
+      args: tuple
+      returns:
+      tuple 
+
+      '''
+      calu1 = GameLogic.calculate_score(t)
+      arr=[]
+      listt =list(t)
+      for i,val in enumerate(listt):
+          listt.pop(i)
+          calu2 = GameLogic.calculate_score(listt)
+          if calu1 != calu2:
+            arr.append(val)
+            listt.insert(i,val)
+          else:
+              listt.insert(i,val)
+                
+      tt = tuple(arr)
+      return tt
