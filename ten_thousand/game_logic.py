@@ -117,6 +117,9 @@ class GameLogic :
   
   @staticmethod
   def validate_keepers(roll,keeper):
+    """"
+    this function will check if the user entered a valid numbers  from the remaining numbers or not
+    """
     roll_counter = Counter(roll)
     keeper_counter = Counter(keeper)
     same = keeper_counter - roll_counter
@@ -128,7 +131,7 @@ class GameLogic :
   @staticmethod
   def get_scorers(t):
       '''
-      a static method finds the numbers that return values
+      a static method finds the numbers that return scores
       args: tuple
       returns:
       tuple 
