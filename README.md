@@ -14,4 +14,4 @@
 2. test code by run this command : pytest
 
 
-[Pull Request Link](https://github.com/DohaKhamaiseh/ten-thousand/pull/8)
+[Pull Request Link_version2](https://github.com/DohaKhamaiseh/ten-thousand/pull/9)
