@@ -9,6 +9,9 @@ total = 0
 rounds=15
 
 def play(roller=GameLogic.roll_dice):
+    """
+    by this function the user can play the game
+    """
     global total
     total = 0
     print("Welcome to Ten Thousand")
@@ -93,14 +96,7 @@ def play(roller=GameLogic.roll_dice):
             else:
                 print("Invalid input. Try again.")
 
-            # def hot_dice_fun(kept_dice, unbanked_score):
-            #   round_score = GameLogic.calculate_score(kept_dice)
-            #   unbanked_score += round_score
-            #   num_dice = 6
-            #   print(f"You have {unbanked_score} unbanked points and 6 dice remaining")
-            #   print("(r)oll again, (b)ank your points or (q)uit:")
-            #   choice = input("> ")
-            #   return choice
+  
 
     print(f"Thanks for playing. You earned {total} points")
            
@@ -113,6 +109,9 @@ def play(roller=GameLogic.roll_dice):
 
 
 def format_roller(dice_roller):
+    """
+    this function will format the dice numbers 
+    """
     as_string = [str(value) for value in dice_roller]   
     format_roll = " ".join(as_string)
     return f"*** {format_roll} ***"
