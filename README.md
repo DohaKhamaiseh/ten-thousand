@@ -1,6 +1,6 @@
-# LAB - CLASS 06
+# LAB - CLASS 08
 
-## Project : Ten Thousand - version 2
+## Project : Ten Thousand - version 3
 ### Author: Doha Khamaiseh
 
 ### Setup :
