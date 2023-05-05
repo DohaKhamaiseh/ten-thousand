@@ -9,6 +9,10 @@ total = 0
 
 
 def play(roller=GameLogic.roll_dice,num_rounds=20):
+    """
+    this function by use it we can play the ten thousend game
+    
+    """
     global total
     total = 0
     print("Welcome to Ten Thousand")
@@ -65,7 +69,7 @@ def play(roller=GameLogic.roll_dice,num_rounds=20):
        
                 
                 
-            hot_check = GameLogic.get_scorers(kept_dice)
+            # hot_check = GameLogic.get_scorers(kept_dice)
             # print( len(hot_check) == 6 and val)
             # print(hot_check,val)
             round_score += GameLogic.calculate_score(kept_dice)
@@ -73,7 +77,7 @@ def play(roller=GameLogic.roll_dice,num_rounds=20):
             unbanked_score = round_score + total
             
             # print("test")
-            # hot_check = GameLogic.get_scorers(kept_dice)
+            hot_check = GameLogic.get_scorers(kept_dice)
             if len(hot_check) == 6 and val:
                     #   unbanked_score += round_score
                       num_dice = 6
@@ -96,14 +100,7 @@ def play(roller=GameLogic.roll_dice,num_rounds=20):
             else:
                 print("Invalid input. Try again.")
 
-            # def hot_dice_fun(kept_dice, unbanked_score):
-            #   round_score = GameLogic.calculate_score(kept_dice)
-            #   unbanked_score += round_score
-            #   num_dice = 6
-            #   print(f"You have {unbanked_score} unbanked points and 6 dice remaining")
-            #   print("(r)oll again, (b)ank your points or (q)uit:")
-            #   choice = input("> ")
-            #   return choice
+
 
     print(f"Thanks for playing. You earned {total} points")
            
@@ -116,10 +113,12 @@ def play(roller=GameLogic.roll_dice,num_rounds=20):
 
 
 def format_roller(dice_roller):
+    """
+    this function will format the dice numbers 
+    """
     as_string = [str(value) for value in dice_roller]   
     format_roll = " ".join(as_string)
     return f"*** {format_roll} ***"
     
 if __name__ == "__main__":
     play()
- 

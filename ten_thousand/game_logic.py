@@ -6,6 +6,9 @@ class GameLogic :
   
   @staticmethod
   def calculate_score(dice):
+        """
+        this function will calculate the score for dice or multiple dice depending on ten thousand's game rules
+        """
         score = 0
 
         dice_set = set(dice)
@@ -101,6 +104,9 @@ class GameLogic :
    
   @staticmethod
   def roll_dice(dice_num=6):
+       """ 
+       this function will return random numbers between 1 and 6 which represent the num on the dice
+       """
        random_numbers = []
 
        for i in range(dice_num):
