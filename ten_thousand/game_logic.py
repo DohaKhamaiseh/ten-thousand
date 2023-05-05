@@ -6,6 +6,9 @@ class GameLogic :
   
   @staticmethod
   def calculate_score(dice):
+        """
+        this function will calculate the score for dice or multiple dice depending on ten thousend's game
+        """
         score = 0
 
         dice_set = set(dice)
@@ -101,6 +104,9 @@ class GameLogic :
    
   @staticmethod
   def roll_dice(dice_num=6):
+       """"
+       this function will generate a random numbers between 1 and 6 that represent the numbers on a dice
+       """
        random_numbers = []
 
        for i in range(dice_num):
@@ -111,6 +117,9 @@ class GameLogic :
   
   @staticmethod
   def validate_keepers(roll,keeper):
+    """"
+    this function will check if the user enters numbers that are from the remaining ones or not
+    """
     roll_counter = Counter(roll)
     keeper_counter = Counter(keeper)
     same = keeper_counter - roll_counter
@@ -122,7 +131,7 @@ class GameLogic :
   @staticmethod
   def get_scorers(t):
       '''
-      a static method finds the numbers that return values
+      a static method finds the numbers that return score
       args: tuple
       returns:
       tuple 
